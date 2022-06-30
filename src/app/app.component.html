@@ -1,0 +1,35 @@
+<div>
+  <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="searchAccount($event)" placeholder="Ex. ium" #input>
+      </mat-form-field>
+  </div>
+  <div class="demo-button-container">
+    <button mat-raised-button (click)="openDialog()" class="demo-button">
+      Add data
+    </button>
+    <!-- <button
+        mat-raised-button
+        [disabled]="!dataSource.length"
+        (click)="removeData()"
+        class="demo-button">
+      Remove data
+    </button> -->
+  </div>
+      <app-table
+      [dataSource]="dataSource"
+      [displayedColumns]="displayedColumns"
+      [dataSearch]="dataSearch"
+      ></app-table>
+      <li>
+        You chose: <i>{{animal}}</i>
+      </li>
+      <mat-paginator #paginator
+                  [pageSize]="5"
+                  [pageSizeOptions]="[5, 15, 25]"
+                 showFirstLastButtons
+                 >
+      </mat-paginator>
+
+</div>
+
